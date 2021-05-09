@@ -1,5 +1,6 @@
 from serpapi import GoogleSearch
 import json
+import os
 
 
 class dork_search:
@@ -11,6 +12,6 @@ class dork_search:
                 for suffix in suffixes:
                     query = keyword + " " + search_type.value + " site:" + suffix
                     search = GoogleSearch({"q": query,
-                                           "api_key": "38661adf0fcfaaecc6e38b3adeb5edce44902e2eacf8ca118e5f62da6005f550"})
+                                           "api_key": os.environ.get('API_KEY')})
                     result = search.get_dict()
         return json.loads(json.dumps(result))
