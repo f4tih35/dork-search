@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class search_type(Enum):
+class type(Enum):
     OPEN_FTP_SERVER = 'inurl:ftp intitle:index of'
     SSH_PRIVATE_KEY = 'intitle:index.of id_rsa -id_rsa.pub'
     ENV_FILES = 'DB_USERNAME filetype:env'
